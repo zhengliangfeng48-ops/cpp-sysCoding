@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<dirent.h>
+
+int main(int argc,char* argv[]){
+	DIR* dp=opendir(argv[1]);
+	struct dirent* sdp;
+
+	if(dp==NULL){
+		perror("opendir error");
+		exit(1);
+	}
+
+	while((sdp=readdir(dp))!=NULL){
+		if(sdp->d_name[0]=='.'){
+			continue;
+		}
+		printf("%s\t",sdp->d_name);
+	}
+	printf("\n");
+
+	closedir(dp);
+}
