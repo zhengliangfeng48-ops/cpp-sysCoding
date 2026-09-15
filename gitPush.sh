@@ -1,6 +1,8 @@
 #!/bin/bash
 
 while true;do
-	git push 
+	if git push;then 
+		break
+	fi
 	sleep 20
 done
