@@ -19,5 +19,6 @@ int main(){
 		exit(1);
 	}
 
-	sleep(1);
+	//sleep(1);
+	pthread_exit((void*)0);
 }
